@@ -1,0 +1,24 @@
+{
+  "pages": [
+    { "path": "pages/login/login", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/explore/explore", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/route-detail/route-detail", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/ai-recommend/ai-recommend", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/checkin/checkin", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/record-detail/record-detail", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/ar-checkin/ar-checkin", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/achievement/achievement", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/rank/rank", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/profile/profile", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/booking/booking", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/mall/mall", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/dashboard/dashboard", "style": { "navigationStyle": "custom" } }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "西岭雪山",
+    "navigationBarBackgroundColor": "#F7FAF9",
+    "backgroundColor": "#F7FAF9",
+    "navigationStyle": "custom"
+  }
+}
