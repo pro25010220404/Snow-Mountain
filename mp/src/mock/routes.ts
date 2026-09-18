@@ -10,7 +10,7 @@ export const ROUTES: ExploreRoute[] = [
     difficulty: 4,
     duration: '约 4 小时',
     distanceKm: 12,
-    cover: { from: '#5C84AC', to: '#EAF3F6' },
+    cover: { from: '#5C84AC', to: '#EAF3F6', image: '/static/covers/winter.jpg' },
     intro:
       '从初级雪道起步，一路进阶至野雪区。在海拔 2000 米以上的雪原上，感受速度与雪粒擦过脸颊的清爽。',
     wellness:
@@ -75,7 +75,7 @@ export const ROUTES: ExploreRoute[] = [
     difficulty: 3,
     duration: '约 3 小时',
     distanceKm: 8,
-    cover: { from: '#6FA55A', to: '#E3EFDB' },
+    cover: { from: '#6FA55A', to: '#E3EFDB', image: '/static/covers/spring.jpg' },
     intro:
       '沿着海拔攀升的步道，穿行在成片高山杜鹃之间。每到一处观景台，云雾散去，雪峰忽现。',
     wellness:
@@ -140,7 +140,7 @@ export const ROUTES: ExploreRoute[] = [
     difficulty: 2,
     duration: '约 2.5 小时',
     distanceKm: 6,
-    cover: { from: '#3E8BA0', to: '#D8E9EE' },
+    cover: { from: '#3E8BA0', to: '#D8E9EE', image: '/static/covers/summer.jpg' },
     intro:
       '夏季平均 22℃ 的天然空调。沿溪流而上，在瀑布下感受水雾，最后在草坪搭起帐篷看星空。',
     wellness:
@@ -205,7 +205,7 @@ export const ROUTES: ExploreRoute[] = [
     difficulty: 2,
     duration: '约 2 小时',
     distanceKm: 5,
-    cover: { from: '#C97B3D', to: '#F3E0CC' },
+    cover: { from: '#C97B3D', to: '#F3E0CC', image: '/static/covers/autumn.jpg' },
     intro:
       '秋霜染过，山体像打翻的调色盘。沿着栈道寻找最佳机位，把彩林、云海与雪峰一次拍全。',
     wellness:

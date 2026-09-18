@@ -12,6 +12,7 @@ const achievements = useAchievementsStore()
 const nickname = ref('')
 const agreed = ref(true)
 const heart = ref(false)
+const bg = '/static/login-bg.jpg'
 let redirect = '/explore'
 
 onLoad((q) => {
@@ -31,7 +32,9 @@ function enter() {
 <template>
   <view class="flex min-h-screen flex-col">
     <!-- 顶部山景 -->
-    <view class="relative flex-1 overflow-hidden bg-gradient-to-b from-brand-700 via-brand-600 to-brand-500">
+    <view class="relative flex-1 overflow-hidden">
+      <image :src="bg" mode="aspectFill" class="absolute inset-0 h-full w-full" />
+      <view class="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/25 to-ink/5" />
       <view class="safe-top relative z-10 px-8 pt-6 text-white">
         <view class="flex items-center gap-2 text-sm font-medium text-white/80">
           <view class="flex h-7 w-7 items-center justify-center rounded-lg bg-white/20">
@@ -85,8 +88,8 @@ function enter() {
         </view>
         <view class="flex items-center justify-between py-1.5">
           <view class="text-sm text-ink-soft">心率等敏感数据</view>
-          <view class="relative h-6 w-11 rounded-full" :class="heart ? 'bg-brand-500' : 'bg-ink/15'" @click="heart = !heart">
-            <view class="absolute top-0.5 h-5 w-5 rounded-full bg-white shadow" :class="heart ? 'left-[22px]' : 'left-0.5'" />
+          <view class="switch relative h-6 w-11 rounded-full" :class="heart ? 'bg-brand-500' : 'bg-ink/15'" @click="heart = !heart">
+            <view class="switch-thumb absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white shadow" :class="heart ? 'switch-thumb-on' : ''" />
           </view>
         </view>
         <view class="mt-1 text-[11px] leading-relaxed text-ink-faint">敏感数据默认关闭，仅用于运动记录与健康生活方式，不涉及任何医疗用途。</view>

@@ -96,28 +96,30 @@ function share(a: AV) {
           <view
             v-for="a in g.items"
             :key="a.id"
-            class="tap flex items-center gap-3 border-b border-ink/5 px-5 py-3.5 last:border-0"
+            class="tap border-b border-ink/5 px-5 py-3.5 last:border-0"
             @click="openDetail(a)"
           >
-            <MedalBadge :medal="a.medal" :size="40" :locked="!a.unlocked" />
-            <view class="min-w-0 flex-1">
-              <view class="flex items-center gap-2">
-                <text class="text-sm font-semibold" :class="a.unlocked ? 'text-ink' : 'text-ink-soft'">{{ a.name }}</text>
-                <view v-if="a.unlocked" class="chip bg-forest/10 text-forest">已达成</view>
+            <view class="flex items-center gap-3">
+              <MedalBadge :medal="a.medal" :size="40" :locked="!a.unlocked" />
+              <view class="flex min-w-0 flex-1 items-center gap-2">
+                <view class="shrink-0 whitespace-nowrap text-sm font-semibold" :class="a.unlocked ? 'text-ink' : 'text-ink-soft'">{{ a.name }}</view>
+                <view v-if="a.unlocked" class="chip shrink-0 bg-forest/10 text-forest">已达成</view>
+                <view class="num ml-auto shrink-0 whitespace-nowrap text-[11px] text-ink-faint">{{ progressText(a) }}</view>
               </view>
-              <view class="mt-0.5 truncate text-xs text-ink-faint">{{ a.condition }}</view>
+              <Icon name="chevron-right" :size="18" color="inkFaint" />
+            </view>
+            <view class="pl-[52px]">
+              <view class="mt-1 truncate text-xs text-ink-faint">{{ a.condition }}</view>
               <view class="mt-2 flex items-center gap-2">
-                <view class="h-1.5 flex-1 overflow-hidden rounded-full bg-ink/8">
+                <view class="flex-1 overflow-hidden rounded-full bg-ink/8" style="height: 4px;">
                   <view
                     class="h-full rounded-full"
                     :class="a.unlocked ? 'bg-forest' : 'bg-brand-500'"
                     :style="{ width: Math.min(100, (a.progress / a.target) * 100) + '%' }"
                   />
                 </view>
-                <text class="num shrink-0 text-[11px] text-ink-faint">{{ progressText(a) }}</text>
               </view>
             </view>
-            <Icon name="chevron-right" :size="18" color="inkFaint" />
           </view>
         </view>
       </view>

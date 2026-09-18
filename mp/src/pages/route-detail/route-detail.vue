@@ -84,6 +84,7 @@ const ctaText = computed(() => {
   <view v-if="r" class="pb-28">
     <!-- 头图 -->
     <view class="relative h-56 overflow-hidden" :style="{ background: `linear-gradient(140deg,${r.cover.from},${r.cover.to})` }">
+      <image v-if="r.cover.image" :src="r.cover.image" mode="aspectFill" class="absolute inset-0 h-full w-full" />
       <view
         class="absolute left-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-ink/25"
         style="top: calc(var(--status-bar-height, 0px) + 12px)"

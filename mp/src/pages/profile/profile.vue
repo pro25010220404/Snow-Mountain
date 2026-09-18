@@ -155,19 +155,23 @@ function resetAll() {
     </view>
 
     <!-- 隐私授权弹层 -->
-    <view v-if="showPrivacy" class="fixed inset-0 z-50 flex items-center justify-center bg-ink/60 p-8" @click="showPrivacy = false">
-      <view class="w-full max-w-xs rounded-3xl bg-white p-6 shadow-lift" @click.stop>
+    <view v-if="showPrivacy" class="fixed inset-0 z-50 flex items-center justify-center p-8">
+      <view class="absolute inset-0 bg-ink/60" @click="showPrivacy = false" />
+      <view class="relative w-full max-w-xs rounded-3xl bg-white p-6 shadow-lift">
         <view class="text-base font-bold text-ink">隐私授权管理</view>
         <view class="mt-1 text-xs text-ink-faint">以下授权可随时开关，心率等敏感数据默认关闭。</view>
         <view class="mt-4 flex flex-col gap-3">
           <view v-for="g in grantItems" :key="g.key" class="flex items-center justify-between">
             <text class="text-sm text-ink-soft">{{ g.label }}</text>
             <view
-              class="relative h-6 w-11 rounded-full"
+              class="switch relative h-6 w-11 rounded-full"
               :class="user.grants[g.key] ? 'bg-brand-500' : 'bg-ink/15'"
               @click="toggleGrant(g.key)"
             >
-              <view class="absolute top-0.5 h-5 w-5 rounded-full bg-white shadow" :class="user.grants[g.key] ? 'left-[22px]' : 'left-0.5'" />
+              <view
+                class="switch-thumb absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white shadow"
+                :class="user.grants[g.key] ? 'switch-thumb-on' : ''"
+              />
             </view>
           </view>
         </view>
@@ -176,8 +180,9 @@ function resetAll() {
     </view>
 
     <!-- 退出确认 -->
-    <view v-if="showLogout" class="fixed inset-0 z-50 flex items-center justify-center bg-ink/60 p-8" @click="showLogout = false">
-      <view class="w-full max-w-xs rounded-3xl bg-white p-6 text-center shadow-lift" @click.stop>
+    <view v-if="showLogout" class="fixed inset-0 z-50 flex items-center justify-center p-8">
+      <view class="absolute inset-0 bg-ink/60" @click="showLogout = false" />
+      <view class="relative w-full max-w-xs rounded-3xl bg-white p-6 text-center shadow-lift">
         <view class="text-base font-bold text-ink">确认退出登录？</view>
         <view class="mt-1 text-xs text-ink-faint">退出后需重新进入演示账号</view>
         <view class="mt-5 flex gap-2">

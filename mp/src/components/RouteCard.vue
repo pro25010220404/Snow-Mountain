@@ -10,6 +10,8 @@ const props = defineProps<{
   progress: number // 0..1
 }>()
 
+const emit = defineEmits<{ click: [] }>()
+
 const locked = computed(() => props.status === 'locked')
 const done = computed(() => props.status === 'completed')
 
@@ -30,16 +32,22 @@ const pct = computed(() => Math.round(props.progress * 100))
 </script>
 
 <template>
-  <view class="tap card overflow-hidden" :class="locked ? 'opacity-80' : ''">
+  <view class="tap card overflow-hidden" :class="locked ? 'opacity-80' : ''" @click="emit('click')">
     <!-- 封面 -->
     <view
-      class="relative h-24 overflow-hidden"
+      class="relative h-40 overflow-hidden"
       :style="{
         background: locked
           ? 'linear-gradient(120deg,#D6DBD8,#C2C9C6)'
           : `linear-gradient(120deg,${route.cover.from},${route.cover.to})`,
       }"
     >
+      <image
+        v-if="!locked && route.cover.image"
+        :src="route.cover.image"
+        mode="aspectFill"
+        class="absolute inset-0 h-full w-full"
+      />
       <view class="absolute left-3 top-3 flex items-center gap-1.5">
         <view class="chip bg-white/85 text-ink">{{ SEASON_LABEL[route.season] }}</view>
       </view>

@@ -156,6 +156,7 @@ function adopt() {
           class="relative h-24"
           :style="{ background: `linear-gradient(120deg,${result.route.cover.from},${result.route.cover.to})` }"
         >
+          <image v-if="result.route.cover.image" :src="result.route.cover.image" mode="aspectFill" class="absolute inset-0 h-full w-full" />
           <view class="absolute left-4 top-3 flex items-center gap-2">
             <view class="chip bg-white/85 text-ink">{{ SEASON_LABEL[result.route.season] }}</view>
             <view class="chip bg-brand-600 text-white">AI 推荐</view>

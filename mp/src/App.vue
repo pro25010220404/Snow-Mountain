@@ -52,6 +52,19 @@ page {
   @apply transition;
 }
 
+.switch {
+  transition: background-color 0.2s ease;
+}
+
+.switch-thumb {
+  transition: transform 0.2s ease;
+  transform: translateX(0);
+}
+
+.switch-thumb-on {
+  transform: translateX(20px);
+}
+
 .progress-shimmer {
   background-image: linear-gradient(
     100deg,

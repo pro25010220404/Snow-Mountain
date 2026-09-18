@@ -36,7 +36,7 @@ export interface ExploreRoute {
   difficulty: number // 1-5
   duration: string
   distanceKm: number
-  cover: { from: string; to: string } // 封面渐变
+  cover: { from: string; to: string; image?: string } // 封面渐变 / 图片
   intro: string
   wellness: string // 康养价值文案
   points: RoutePoint[]
